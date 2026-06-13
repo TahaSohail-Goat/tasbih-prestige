@@ -1,0 +1,301 @@
+@import "tailwindcss";
+
+/* =========================================
+   PWA / Safe Area Inset Support
+   ========================================= */
+:root {
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+}
+
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea {
+  touch-action: manipulation;
+}
+
+button {
+  transform: translateZ(0);
+}
+
+.urdu-ui {
+  font-family: "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", "Segoe UI", Arial, sans-serif;
+}
+
+.urdu-ui .font-mono {
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  button,
+  input,
+  textarea {
+    transition-duration: 180ms;
+  }
+
+  button:active {
+    transform: translateY(1px) scale(0.98);
+  }
+}
+
+/* =========================================
+   6 Premium Islamic Themes
+   ========================================= */
+.theme-emerald {
+  --theme-bg: #021a16;
+  --theme-radial-1: rgba(6,78,59,0.85);
+  --theme-radial-2: rgba(16,185,129,0.15);
+  --theme-radial-3: rgba(6,95,70,0.2);
+  --theme-surface: rgba(4,30,26,0.75);
+  --theme-surface-solid: #041e1a;
+  --theme-border: rgba(16,185,129,0.22);
+  --theme-border-hover: rgba(52,211,153,0.5);
+  --theme-accent: #10b981;
+  --theme-accent-secondary: #f59e0b;
+  --theme-accent-glow: rgba(16,185,129,0.45);
+  --theme-text-primary: #f8fafc;
+  --theme-text-muted: #94a3b8;
+  --theme-pattern: rgba(255,255,255,0.04);
+  --theme-nav-bg: rgba(2,26,22,0.97);
+}
+.theme-desert {
+  --theme-bg: #080c14;
+  --theme-radial-1: rgba(30,41,59,0.8);
+  --theme-radial-2: rgba(245,158,11,0.12);
+  --theme-radial-3: rgba(15,23,42,0.25);
+  --theme-surface: rgba(13,20,32,0.75);
+  --theme-surface-solid: #0d1420;
+  --theme-border: rgba(148,163,184,0.15);
+  --theme-border-hover: rgba(245,158,11,0.4);
+  --theme-accent: #e2a122;
+  --theme-accent-secondary: #38bdf8;
+  --theme-accent-glow: rgba(226,161,34,0.35);
+  --theme-text-primary: #f8fafc;
+  --theme-text-muted: #94a3b8;
+  --theme-pattern: rgba(226,161,34,0.03);
+  --theme-nav-bg: rgba(8,12,20,0.97);
+}
+.theme-shiraz {
+  --theme-bg: #140308;
+  --theme-radial-1: rgba(120,10,40,0.55);
+  --theme-radial-2: rgba(244,63,94,0.12);
+  --theme-radial-3: rgba(64,4,20,0.25);
+  --theme-surface: rgba(25,5,12,0.75);
+  --theme-surface-solid: #19050c;
+  --theme-border: rgba(244,63,94,0.2);
+  --theme-border-hover: rgba(251,113,133,0.5);
+  --theme-accent: #f43f5e;
+  --theme-accent-secondary: #fb923c;
+  --theme-accent-glow: rgba(244,63,94,0.4);
+  --theme-text-primary: #fff1f2;
+  --theme-text-muted: #fda4af;
+  --theme-pattern: rgba(244,63,94,0.035);
+  --theme-nav-bg: rgba(20,3,8,0.97);
+}
+.theme-alhambra {
+  --theme-bg: #150803;
+  --theme-radial-1: rgba(154,52,18,0.55);
+  --theme-radial-2: rgba(20,184,166,0.12);
+  --theme-radial-3: rgba(67,20,7,0.25);
+  --theme-surface: rgba(28,12,6,0.75);
+  --theme-surface-solid: #1c0c06;
+  --theme-border: rgba(249,115,22,0.2);
+  --theme-border-hover: rgba(20,184,166,0.5);
+  --theme-accent: #f97316;
+  --theme-accent-secondary: #2dd4bf;
+  --theme-accent-glow: rgba(249,115,22,0.4);
+  --theme-text-primary: #fff7ed;
+  --theme-text-muted: #fed7aa;
+  --theme-pattern: rgba(249,115,22,0.035);
+  --theme-nav-bg: rgba(21,8,3,0.97);
+}
+.theme-ocean {
+  --theme-bg: #02111d;
+  --theme-radial-1: rgba(14,116,144,0.55);
+  --theme-radial-2: rgba(56,189,248,0.12);
+  --theme-radial-3: rgba(8,47,73,0.25);
+  --theme-surface: rgba(3,21,36,0.75);
+  --theme-surface-solid: #031524;
+  --theme-border: rgba(14,116,144,0.22);
+  --theme-border-hover: rgba(56,189,248,0.5);
+  --theme-accent: #06b6d4;
+  --theme-accent-secondary: #38bdf8;
+  --theme-accent-glow: rgba(6,182,212,0.4);
+  --theme-text-primary: #ecfeff;
+  --theme-text-muted: #a5f3fc;
+  --theme-pattern: rgba(6,182,212,0.035);
+  --theme-nav-bg: rgba(2,17,29,0.97);
+}
+.theme-kaaba {
+  --theme-bg: #070708;
+  --theme-radial-1: rgba(39,39,42,0.6);
+  --theme-radial-2: rgba(234,179,8,0.1);
+  --theme-radial-3: rgba(18,18,20,0.3);
+  --theme-surface: rgba(12,12,14,0.75);
+  --theme-surface-solid: #0c0c0e;
+  --theme-border: rgba(234,179,8,0.2);
+  --theme-border-hover: rgba(234,179,8,0.5);
+  --theme-accent: #d4af37;
+  --theme-accent-secondary: #f4f4f5;
+  --theme-accent-glow: rgba(212,175,55,0.35);
+  --theme-text-primary: #fafafa;
+  --theme-text-muted: #d4d4d8;
+  --theme-pattern: rgba(212,175,55,0.025);
+  --theme-nav-bg: rgba(7,7,8,0.97);
+}
+
+/* =========================================
+   Dynamic Base Classes
+   ========================================= */
+.dynamic-bg {
+  background-color: var(--theme-bg);
+  color: var(--theme-text-primary);
+  transition: background-color 0.6s ease, color 0.4s ease;
+}
+.dynamic-surface {
+  background-color: var(--theme-surface);
+  border-color: var(--theme-border);
+}
+.dynamic-accent-text  { color: var(--theme-accent); }
+.dynamic-accent-secondary-text { color: var(--theme-accent-secondary); }
+.dynamic-accent-bg    { background-color: var(--theme-accent); }
+.dynamic-accent-border { border-color: var(--theme-accent); }
+
+/* =========================================
+   Glow & Visual Utilities
+   ========================================= */
+.glow-text {
+  text-shadow: 0 0 12px var(--theme-accent-glow), 0 0 28px var(--theme-accent-glow);
+}
+.glow-text-soft {
+  text-shadow: 0 0 8px rgba(255,255,255,0.15);
+}
+.glow-ring {
+  box-shadow: 0 0 0 1px var(--theme-border), 0 0 24px var(--theme-accent-glow);
+}
+.shadow-accent {
+  box-shadow: 0 4px 24px var(--theme-accent-glow);
+}
+
+.footer-credit p:not(:first-child),
+.footer-credit .hidden {
+  display: none;
+}
+
+/* =========================================
+   Scrollbars
+   ========================================= */
+.custom-scrollbar::-webkit-scrollbar { width: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--theme-border);
+  border-radius: 4px;
+}
+
+/* =========================================
+   Keyframe Animations
+   ========================================= */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes glowPulse {
+  0%,100% { box-shadow: 0 0 18px var(--theme-accent-glow); }
+  50%      { box-shadow: 0 0 40px var(--theme-accent-glow), 0 0 60px rgba(255,255,255,0.04); }
+}
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes beadDrop {
+  0%   { transform: translateY(-6px); opacity: 0.6; }
+  60%  { transform: translateY(2px); }
+  100% { transform: translateY(0); opacity: 1; }
+}
+@keyframes tapRipple {
+  0%   { transform: scale(0.4); opacity: 0.7; }
+  100% { transform: scale(3);   opacity: 0; }
+}
+@keyframes counterPop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+@keyframes slideTabIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up      { animation: slideUp 0.45s cubic-bezier(0.16,1,0.3,1) forwards; }
+.animate-fade-in       { animation: fadeIn 0.3s ease-out forwards; }
+.animate-glow-pulse    { animation: glowPulse 3.5s ease-in-out infinite; }
+.animate-spin-slow     { animation: spinSlow 12s linear infinite; }
+.animate-bead-drop     { animation: beadDrop 0.25s ease-out forwards; }
+.animate-tap-ripple    { animation: tapRipple 0.75s ease-out forwards; }
+.animate-counter-pop   { animation: counterPop 0.2s ease-out; }
+.animate-tab-in        { animation: slideTabIn 0.3s ease-out forwards; }
+
+/* =========================================
+   Mobile Bottom Nav Safe Area
+   ========================================= */
+.bottom-nav {
+  padding-bottom: calc(var(--sab) + 8px);
+}
+.main-content-mobile {
+  padding-bottom: calc(var(--sab) + 80px);
+}
+.page-top-safe {
+  padding-top: calc(var(--sat) + 0px);
+}
+
+/* =========================================
+   Range Input Styling
+   ========================================= */
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--theme-border);
+  outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--theme-accent);
+  cursor: pointer;
+  box-shadow: 0 0 8px var(--theme-accent-glow);
+}
+input[type=range]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--theme-accent);
+  cursor: pointer;
+  border: none;
+}
+
+/* =========================================
+   Number Input — hide spinners on mobile
+   ========================================= */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
+input[type=number] { -moz-appearance: textfield; }

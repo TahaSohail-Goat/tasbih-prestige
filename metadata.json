@@ -1,0 +1,6 @@
+{
+  "name": "Tasbih Counter",
+  "description": "An elegant, highly accessible Tasbih and Dhikr counter designed for Islamic basics with beautiful traditional backgrounds, statistics, custom targets, and haptic feedback simulations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
