@@ -1,12 +1,7 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
 
 # Tasbih Counter
 
 This app is a digital tasbih counter with AI dhikr suggestions.
-
-View your app in AI Studio: https://ai.studio/apps/b2434ed1-2c9a-49d8-881d-aa878d8576f6
 
 ## Run Locally
 
